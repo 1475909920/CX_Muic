@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.dao.SongsheetDao">
+    <select id="selectSongsheet" resultType="Songsheet">
+   		SELECT `id`,`songSheetName`,`play`,`image`,bindtap FROM `songsheet`;
+   </select>
+
+    <insert id="addSongsheet" parameterType="Songsheet">
+        INSERT INTO `songsheet` (`songSheetName`,`play`,`image`,bindtap) VALUES (#{songSheetName},#{play},#{image},#{bindtap});
+   </insert>
+
+    <delete id="delectSongsheet" parameterType="java.lang.Integer">
+        DELETE FROM songsheet WHERE id=#{id}
+   </delete>
+</mapper>

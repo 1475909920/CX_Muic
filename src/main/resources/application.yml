@@ -1,0 +1,24 @@
+#配置项目信息
+server:
+  servlet:
+    context-path: /
+  port: 8080
+  tomcat:
+    uri-encoding: UTF-8
+
+#配置Spring相关信息
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/cxmuic?serverTimezone=UTC
+    username: root
+    password: root
+  mvc:
+    view:
+      prefix: /jsp/
+      suffix: .jsp
+
+#配置Mybatis相关信息
+mybatis:
+  mapper-locations: classpath:/mapper/*Mapper.xml
+  type-aliases-package: cn.entity

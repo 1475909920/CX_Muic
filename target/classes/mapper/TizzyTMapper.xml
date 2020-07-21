@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.dao.TizzyTDao">
+   <select id="selectTizzyT" resultType="TizzyT">
+   		SELECT `id`,`songname`,`singer`,`image` FROM `tizzyt`
+   </select>
+
+    <insert id="addTizzyY" parameterType="TizzyT">
+        INSERT INTO `tizzyt` (`songname`,`singer`,`image`) VALUES (#{songname},#{singer},#{image});
+   </insert>
+
+   <delete id="delectTizzyT" parameterType="java.lang.Integer">
+        DELETE FROM tizzyt WHERE id=#{id}
+   </delete>
+</mapper>
